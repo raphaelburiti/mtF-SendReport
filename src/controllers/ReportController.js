@@ -66,7 +66,7 @@ module.exports = {
         codigo = calleds[i].id_service
         valor = calleds[i].distance_service * 0.6.toString()
 
-        descricao = `De: ${'Base'} (${dataUser.address}) para: ${calleds[i].id_customer} (${customers[i].address}) Distâcia ${calleds[i].distance} Km`
+        descricao = `De: ${'Base'} (${dataUser.address}) para: ${calleds[i].id_customer} (${customers[i].address}) Distâcia ${calleds[i].distance_service} Km`
 
         reports.push([codigo, data, valor, descricao])
 
@@ -75,11 +75,11 @@ module.exports = {
       if (i > 0 && i < numberOfCalleds - 1) {
 
         let data;
-        data = calleds[i].date.slice(8, 10) + '/' + calleds[i].date.slice(5, 7) + '/' + calleds[i].date.slice(0, 4)
+        data = calleds[i].date_service.slice(8, 10) + '/' + calleds[i].date_service.slice(5, 7) + '/' + calleds[i].date_service.slice(0, 4)
 
-        codigo = calleds[i].id_called
-        valor = calleds[i].distance * 0.6.toString()
-        descricao = `De: ${calleds[i - 1].id_customer} (${customers[i - 1].address}) para: ${customers[i].id_customer} (${customers[i].address}) Distâcia ${calleds[i].distance} Km`
+        codigo = calleds[i].id_service
+        valor = calleds[i].distance_service * 0.6.toString()
+        descricao = `De: ${calleds[i - 1].id_customer} (${customers[i - 1].address}) para: ${customers[i].id_customer} (${customers[i].address}) Distâcia ${calleds[i].distance_service} Km`
 
         reports.push([codigo, data, valor, descricao])
       }
@@ -91,7 +91,7 @@ module.exports = {
 
         codigo = calleds[i].id_service
         valor = calleds[i].distance_service * 0.6.toString()
-        descricao = `De: ${calleds[i - 1].id_customer} (${customers[i - 1].address}) para: ${'Base'} (${dataUser.address}) Distâcia ${calleds[i].distance} Km`
+        descricao = `De: ${calleds[i - 1].id_customer} (${customers[i - 1].address}) para: ${'Base'} (${dataUser.address}) Distâcia ${calleds[i].distance_service} Km`
 
         reports.push([codigo, data, valor, descricao])
       }

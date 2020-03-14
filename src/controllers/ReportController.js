@@ -5,7 +5,7 @@ module.exports = {
   async report(req, res) {
 
     const { orderServices, dataUser } = req.body
-    console.log(orderServices, dataUser)
+    // console.log(orderServices, dataUser)
 
     const calleds = orderServices
 
